@@ -55,13 +55,8 @@ To run, from the application folder, just type on terminal:
 rails server
 ```
 Now you can go to your favorite web browser like Google Crome and access the url
-<br> http://localhost:3000/users/new
-<br>There you can create a user
+<br> http://localhost:3000/
 
-To edit this user, go to:
-<br> http://localhost:3000/users/1/edit
-
-Where 1 is the id, on the order you create the users
 
 ### Contributing
 
