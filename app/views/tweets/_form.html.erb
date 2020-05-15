@@ -1,7 +1,9 @@
 <%= form_with(model: tweet) do |form| %>
   <div class="field">
-    <%= form.label(:tweet, 'Write a tweet here: ') %>
-    <%= form.text_area(:tweet) %>
+    <div class="control">
+      <%= form.label(:tweet, 'Write a tweet here: ', class: "label") %>
+      <%= form.text_area(:tweet, class: "textarea") %>
+    </div>
   </div>
 
   <div class="actions">
