@@ -31,19 +31,19 @@
 
         <nav class="level">
           <div class="level-left is-modile">
-					  <%= link_to tweet, class: "level-item" do %>
+					  <%= link_to grap_tweet, class: "level-item" do %>
   					  <span class="icon">
                 <i class="fa fa-link" aria-hidden="true"></i>
               </span>
   					<% end %>
 
-  					<%= link_to edit_tweeet_path(tweet), class: "level-item" do %>
+  					<%= link_to edit_tweet_path(grap_tweet), class: "level-item" do %>
   					  <span class="icon">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               </span>
   					<% end %>
 
-  					<%= link_to tweet, method: :delete, data: { confirm: "You want to erase?" } do %>
+  					<%= link_to grap_tweet, method: :delete, data: { confirm: "You want to erase?" } do %>
               <span class="icon">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
               </span>
