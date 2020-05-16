@@ -7,10 +7,10 @@
     </figure>
 
     <div class="media-content">
-
+      <%= render 'tweets/form' %>
     </div>
   </article>
-</div>
+
 
 <%# read from controller/tweets_controller.rb, action def index %>
 <% @tweets.each do |grab_tweet| %>
@@ -54,3 +54,4 @@
     </article>
   </div>
 <% end %>
+</div>

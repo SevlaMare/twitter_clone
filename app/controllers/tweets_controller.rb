@@ -6,6 +6,9 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
     # @tweets = Tweet.all.order('create_at DESC')
+
+    # allow create post on home
+    @tweet = Tweet.new
   end
 
   # GET /tweets/1
