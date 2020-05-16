@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.json
   def show
+    @tweets = Tweet.find(params[:id])
   end
 
   # GET /tweets/new
@@ -63,13 +64,13 @@ class TweetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tweet
-      @tweet = Tweet.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def tweet_params
-      params.require(:tweet).permit(:tweet)
-    end
+  # Only allow a list of trusted parameters through.
+  def tweet_params
+    params.require(:tweet).permit(:tweet)
+  end
 end
