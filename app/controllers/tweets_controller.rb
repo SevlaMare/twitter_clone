@@ -1,11 +1,11 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: %i[show edit update destroy]
 
   # GET /tweets
   # GET /tweets.json
   def index
     @tweets = Tweet.all
-    #@tweets = Tweet.all.order('create_at DESC')
+    # @tweets = Tweet.all.order('create_at DESC')
   end
 
   # GET /tweets/1
@@ -20,8 +20,7 @@ class TweetsController < ApplicationController
   end
 
   # GET /tweets/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tweets
   # POST /tweets.json
@@ -64,6 +63,7 @@ class TweetsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_tweet
     @tweet = Tweet.find(params[:id])
