@@ -4,8 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
-    # @tweets = Tweet.all.order('create_at DESC')
+    @tweets = Tweet.all.order("created_at DESC")
 
     # allow create post on home
     @tweet = Tweet.new
@@ -32,7 +31,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Tweet was successfully created.' }
         format.json { render :show, status: :created, location: @tweet }
       else
         format.html { render :new }
