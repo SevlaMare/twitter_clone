@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[show edit update destroy]
+
+  # only can trigger actions if login was made
   before_action :authenticate_user!, except: %i[index show]
 
   # GET /tweets
@@ -19,7 +21,8 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-    @tweet = Tweet.new
+    # @tweet = Tweet.new
+    @tweet = current_user.tweets.build
   end
 
   # GET /tweets/1/edit
@@ -28,7 +31,8 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
-    @tweet = Tweet.new(tweet_params)
+    # @tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.build(tweet_params)
 
     respond_to do |format|
       if @tweet.save
@@ -66,7 +70,6 @@ class TweetsController < ApplicationController
   end
 
   private
-
   # Use callbacks to share common setup or constraints between actions.
   def set_tweet
     @tweet = Tweet.find(params[:id])
