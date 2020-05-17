@@ -11,47 +11,46 @@
     </div>
   </article>
 
-
-<%# read from controller/tweets_controller.rb, action def index %>
-<% @tweets.each do |grab_tweet| %>
-  <div class="box">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-64x64">
-          <img src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
-      </div>
-
-      <div class="media-content">
-        <div class="content">
-          <strong>TM</strong><br>
-          <small>#sevlamare</small><br>
-          <p><%= grab_tweet.tweet %></P>
+  <%# read from controller/tweets_controller.rb, action def index %>
+  <% @tweets.each do |grab_tweet| %>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/64x64.png">
+          </figure>
         </div>
 
-        <nav class="level">
-          <div class="level-left is-modile">
-					  <%= link_to grab_tweet, class: "level-item" do %>
-  					  <span class="icon">
-                <i class="fa fa-link" aria-hidden="true"></i>
-              </span>
-  					<% end %>
-
-  					<%= link_to edit_tweet_path(grab_tweet), class: "level-item" do %>
-  					  <span class="icon">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              </span>
-  					<% end %>
-
-  					<%= link_to grab_tweet, method: :delete, data: { confirm: "You want to erase?" } do %>
-              <span class="icon">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </span>
-  					<% end %>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= grab_tweet.user.name %></strong><br>
+  				  <small><%= grab_tweet.user.username %></small><br>
+            <p><%= grab_tweet.tweet %></P>
           </div>
-        </nav>
-      </div>
-    </article>
-  </div>
-<% end %>
+
+          <nav class="level">
+            <div class="level-left is-modile">
+              <%= link_to grab_tweet, class: "level-item" do %>
+                <span class="icon">
+                  <i class="fa fa-link" aria-hidden="true"></i>
+                </span>
+              <% end %>
+
+              <%= link_to edit_tweet_path(grab_tweet), class: "level-item" do %>
+                <span class="icon">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </span>
+              <% end %>
+
+              <%= link_to grab_tweet, method: :delete, data: { confirm: "You want to erase?" } do %>
+                <span class="icon">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+              <% end %>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+  <% end %>
 </div>

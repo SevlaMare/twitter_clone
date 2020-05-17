@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registration: 'registration' }
-  root to: 'tweets#index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :tweets
+  root "tweets#index"
 end
