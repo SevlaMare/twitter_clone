@@ -1,0 +1,60 @@
+<div class="column is-half">
+  <% if user_signed_in? %>
+  <article class="media box">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <%= gravatar_image_tag(current_user.try(:email), size: 64, alt: current_user.name) %>
+      </p>
+    </figure>
+
+    <div class="media-content">
+      <%= render 'tweets/form' %>
+    </div>
+  </article>
+  <% end %>
+
+  <%# read from controller/tweets_controller.rb, action def index %>
+  <% @tweets.each do |grab_tweet| %>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <%= gravatar_image_tag(grab_tweet.user.try(:email), size: 64, alt: grab_tweet.user.try(:name)) %>
+          </figure>
+        </div>
+
+        <div class="media-content">
+          <div class="content">
+            <strong><%= grab_tweet.user.try(:name) %></strong><br>
+            <small><%= grab_tweet.user.try(:username) %></small><br>
+            <p><%= grab_tweet.tweet %></P>
+          </div>
+
+          <% if user_signed_in? && current_user.id == grab_tweet.user_id %>
+          <nav class="level">
+            <div class="level-left is-modile">
+              <%= link_to grab_tweet, class: "level-item" do %>
+                <span class="icon">
+                  <i class="fa fa-link" aria-hidden="true"></i>
+                </span>
+              <% end %>
+
+              <%= link_to edit_tweet_path(grab_tweet), class: "level-item" do %>
+                <span class="icon">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </span>
+              <% end %>
+
+              <%= link_to grab_tweet, method: :delete, data: { confirm: "You want to erase?" } do %>
+                <span class="icon">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+              <% end %>
+            </div>
+          </nav>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
