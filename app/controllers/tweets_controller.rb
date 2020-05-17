@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order('created_at DESC')
-  
+
     # to allow create post on home
     @tweet = Tweet.new
   end
