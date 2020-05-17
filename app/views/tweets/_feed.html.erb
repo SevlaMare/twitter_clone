@@ -1,4 +1,5 @@
 <div class="column is-half">
+  <% if user_signed_in? %>
   <article class="media box">
     <figure class="media-left">
       <p class="image is-64x64">
@@ -10,6 +11,7 @@
       <%= render 'tweets/form' %>
     </div>
   </article>
+  <% end %>
 
   <%# read from controller/tweets_controller.rb, action def index %>
   <% @tweets.each do |grab_tweet| %>
@@ -28,6 +30,7 @@
             <p><%= grab_tweet.tweet %></P>
           </div>
 
+          <% if user_signed_in? && current_user.id == grab_tweet.user_id %>
           <nav class="level">
             <div class="level-left is-modile">
               <%= link_to grab_tweet, class: "level-item" do %>
@@ -49,6 +52,7 @@
               <% end %>
             </div>
           </nav>
+          <% end %>
         </div>
       </article>
     </div>
