@@ -1,9 +1,9 @@
-# Reddit
-> A example of form.<br>
+# Twittor
+> A little Twitter like implementation.<br>
 
 ![screenshot](screenshot.png)
 
-<br>This project consists of using Ruby On Rails to build a form to create and edit a user<br>
+<br>This project was made to practice an authentication system using Rails<br>
 
 ## Content
 
@@ -18,16 +18,19 @@
 ## Features
 
 <ul>
-  <li>The only model is User</li>
-  <li>You can create and edit users</li>
-  <li>It has validations to create and edit</li>
-  <li>A message is show if one of the validations is not fulfilled</li>
+  <li>Use model User and Posts</li>
+  <li>Allow create account, change informations and erase it</li>
+  <li>Has a secure system to login and logout</li>
+  <li>Can make posts, change it and delete your own posts</li>
+  <li>Layout is responsive</li>
 </ul>
 
 ## Built With
 
 - Ruby 2.7 <br>
 - Ruby on Rails 5.2 <br>
+- Devise (AOT), gravatar (Deal with images) and simple_form
+- Bulma (CSS framework)
 - Rubocop (Linter) with Stickler (CI Tool) <br>
 - Git, Github and VScode <br>
 
@@ -44,7 +47,7 @@ To use this program, you will need install:
 #### Get a local copy
 Now you need a copy of this application, if you are using Git:
 ```js
-git clone git@github.com:SevlaMare/rails_form.git
+git clone git@github.com:SevlaMare/twittor.git
 ```
 Otherwise just hit (Download Zip) on green button (Clone or Download) at top of this page.
 
@@ -55,13 +58,7 @@ To run, from the application folder, just type on terminal:
 rails server
 ```
 Now you can go to your favorite web browser like Google Crome and access the url
-<br> http://localhost:3000/users/new
-<br>There you can create a user
-
-To edit this user, go to:
-<br> http://localhost:3000/users/1/edit
-
-Where 1 is the id, on the order you create the users
+<br> http://localhost:3000/
 
 ### Contributing
 
