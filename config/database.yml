@@ -5,32 +5,12 @@ default: &default
 
 development:
   <<: *default
-  # adapter: sqlite3
-  # database: db/development.sqlite3
-  adapter: postgresql
-  database: twittor
-  host: localhost
-  port: 5433
-  username: app_postgres
-  password: 'password1'
-  # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
-
-# Warning: db "test" is erased when run "rake"
-# test:
-#   adapter: postgresql
-#   database: twittor_test
-#   host: localhost
-#   # host: 127.0.0.1 # docker
-#   port: 5433
-#   username: app_postgres
-#   password: password1
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 production:
   <<: *default
   adapter: postgresql
   database: twittor
-  # host: localhost
-  # port: 5433
   username: app_postgres
   password: <%= ENV['APP_POSTGRES_DATABASE_PASSWORD'] %>
-  # DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"

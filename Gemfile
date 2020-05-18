@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # core
 ruby '~> 2.6'
 gem 'rails', '~> 5.2'
+gem 'sqlite3'
 gem 'puma', '~> 3.11'
 
 # generators
@@ -24,15 +25,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'selenium-webdriver'
   # gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
   # gem 'chromedriver-helper'
-  # gem 'rspec-rails', ">= 3.9.0"
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'rubocop'
+  gem 'rspec-rails', ">= 3.9.0"
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
