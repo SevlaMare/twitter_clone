@@ -22,27 +22,27 @@ gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# group :development, :test do
-  # gem 'sqlite3'
-  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # gem 'selenium-webdriver'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'selenium-webdriver'
 
   # gem 'capybara', '>= 2.15'
   # gem 'chromedriver-helper'
-# end
+end
 
-# group :development do
+group :development do
 #   gem 'rubocop'
 #   gem 'rspec-rails', ">= 3.9.0"
-#   gem 'web-console', '>= 3.3.0'
-#   gem 'listen', '>= 3.0.5', '< 3.2'
-#   gem 'spring'
-#   gem 'spring-watcher-listen', '~> 2.0.0'
-# end
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
 end
 
 # Windows compatible
-# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

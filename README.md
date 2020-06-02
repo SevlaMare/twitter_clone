@@ -32,7 +32,7 @@
 - Devise (AOT), gravatar (Deal with images) and simple_form
 - Bulma (CSS framework)
 - Rubocop (Linter) with Stickler (CI Tool) <br>
-- Git, Github and VScode <br>
+- Git, Github and VScode<br>
 
 
 ## Getting Start
